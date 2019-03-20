@@ -1,0 +1,22 @@
+{
+    "title": "Freedom Square",
+    "picture": "http://www.kharkovinfo.com/media/General/original/vex0zl48.jpg",
+    "description": "The Freedom Square is the main square of Kharkov and an architectural landmark. It is the second largest city-center square in Europe and the ninths in the world. It is the place of every possible events: concerts, demonstrations, fairs, meetings. From the moment of foundation (1925) till 1996 it was known as Dzerzhinskogo square.",
+    "shareLink": "https://facebook.com",
+    "createdBy": {
+        "createdDate": "01/03/2019",
+        "userData": {
+            "name": "Elon Musk",
+            "avatar": "https://psychologist.com.ua/wp-content/uploads/2014/08/20140822_avatar.jpg"
+        }
+    },
+    "updated": {
+        "lastModifiedDate": "14/03/2019",
+        "modifiedBy": {
+            "name": "admin",
+            "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ58yUcpDD04YdErb_ylQ2arXUUm6L91IELljTt1sLCahVALpWV"
+        }
+    },
+    "rating": 3,
+    "maxRating": 5
+}
