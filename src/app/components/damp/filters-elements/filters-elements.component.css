@@ -1,0 +1,31 @@
+.filters-holder {
+    padding: 20px;
+}
+h3 {
+    text-align: center;
+}
+.filters-holder ul {
+    padding: 0;
+    list-style: none;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-transform: capitalize;
+    max-width: 80%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+li {
+    padding: 5px 15px;
+    margin: 0 15px 10px;
+    border-radius: 7px;
+    background: greenyellow;
+    cursor: pointer;
+}
+
+li:hover,
+li.active {
+    background: blueviolet;
+    color: #fff;
+}

@@ -2,3 +2,10 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+app-root {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background: #fff url('https://obs.line-scdn.net/0h7LomkTVyaGNSFEc6RA0XNGhCawxheHtgNiI5fQJ6Nld3Jns1PXdzB3NBYlZ2IC89O3MgA3YTc1J4In8wbXBz/w644') no-repeat;
+    background-size: cover;
+}

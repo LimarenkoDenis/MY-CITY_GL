@@ -1,0 +1,31 @@
+.autocomplete-holder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.autocomplete-container {
+    min-width: 300px;
+    position: relative;
+}
+
+input {
+    width: 100%;
+    outline: none;
+    padding: 5px 10px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.autocomplete-list {
+    position: absolute;
+    width: 100%;
+    top:100%;
+    left: 0;
+    background: #fff;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}

@@ -1,0 +1,8 @@
+<div class="filters-holder" *ngIf="filters?.length">
+    <h3>Filters</h3>
+    <ul>
+        <li [class.active]="filter.isActive" *ngFor="let filter of filters">
+            <a>{{filter.name}}</a>
+        </li>
+    </ul>
+</div>

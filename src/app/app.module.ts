@@ -1,24 +1,40 @@
-import { MyCityModule } from './my-city/my-city.module';
+import { RatingComponent } from './components/damp/rating/rating.component';
+import { CardComponent } from './components/damp/card/card.component';
+import { ListComponent } from './components/smart/list/list.component';
+import { FilterElementsComponent } from './components/damp/filters-elements/filters-elements.component';
+import { SharedModule } from './shared/shared.module';
+import { AutocompleteComponent } from './components/damp/autocomplete/autocomplete.component';
+import { HomeComponent } from './pages/home/home.component';
+import { FooterComponent } from './components/damp/footer/footer.component';
+import { NavigationComponent } from './components/smart/navigation/navigation.component';
+import { UserComponent } from './components/smart/user/user.component';
+import { HeaderComponent } from './components/smart/header/header.component';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { UsersModule } from './users/users.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    UserComponent,
+    NavigationComponent,
+    FooterComponent,
+    HomeComponent,
+    AutocompleteComponent,
+    FilterElementsComponent,
+    ListComponent,
+    CardComponent,
+    RatingComponent,
   ],
   imports: [
     BrowserModule,
-    MyCityModule,
-    UsersModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    SharedModule,
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

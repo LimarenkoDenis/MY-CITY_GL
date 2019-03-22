@@ -1,0 +1,17 @@
+.header-holder {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+.logo {
+    display: block;
+}
+a {
+    display: block;
+    text-indent: -99999px;
+    overflow: hidden;
+    width: 150px;
+    height: 57px;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/6/6e/Stadtwerke_Uelzen_Produkt_mycity_logo.svg') 50% 50% no-repeat;
+    background-size: contain;
+}

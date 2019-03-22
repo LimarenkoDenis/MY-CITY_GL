@@ -1,0 +1,10 @@
+<div class="autocomplete-holder">
+    <div class="autocomplete-container">
+        <input placeholder="search data..." type="text" [value]="initialValue" (input)="inputValue($event.target.value)">
+        <div class="autocomplete-list">
+            <ul>
+                <li *ngFor="let elem of filteredElems" (click)="selectElem(elem)"></li>
+            </ul>
+        </div>
+    </div>
+</div>

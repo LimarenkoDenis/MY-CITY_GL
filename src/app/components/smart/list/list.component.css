@@ -1,0 +1,7 @@
+:host {
+    padding: 20px;
+    display: block;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+}

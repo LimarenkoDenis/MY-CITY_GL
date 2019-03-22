@@ -1,0 +1,23 @@
+#nav {
+    margin: 0 0 10px;
+    background: bisque;
+}
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+a {
+    display: block;
+    color: black;
+    padding: 10px 30px;
+}
+
+a:hover {
+    text-decoration: none;
+    background: burlywood;
+    color: rgba(0,0,0,0.7);
+}

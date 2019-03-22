@@ -1,0 +1,7 @@
+<div class="user-holder">
+    <div class="user-avatar">
+        <img *ngIf="userInfo?.avatar" [src]="userInfo.avatar" alt="default description">
+        <img *ngIf="!userInfo?.avatar" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9U7YC4vwNc7p6LpRchPw3t33FpDI5X_e54A2Koke5z2fgwcAx" alt="default description">
+    </div>
+    <span *ngIf="userInfo?.name" class="user-name">{{userInfo.name}}</span>
+</div>

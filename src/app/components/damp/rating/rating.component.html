@@ -1,0 +1,3 @@
+<ul *ngIf="elements?.length">
+    <li [class.active]="elemIndex + 1 <= rating" *ngFor="let elem of elements; let elemIndex = index" (click)="clickHandler(elemIndex + 1)"></li>
+</ul>

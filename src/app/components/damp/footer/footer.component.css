@@ -1,0 +1,14 @@
+:host {
+    background: rgb(98, 98, 114, 0.8);
+}
+::ng-deep #footer #nav {
+    background: none;
+    margin: 0;
+}
+::ng-deep #footer #nav li a {
+    color: #fff;
+}
+
+::ng-deep #footer #nav li a:hover {
+    background: rgb(98, 98, 114, 1);
+}

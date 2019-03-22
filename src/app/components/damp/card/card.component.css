@@ -1,0 +1,8 @@
+.example-card {
+  max-width: 400px;
+}
+
+:host {
+  display: inline-block;
+  vertical-align: top;
+}

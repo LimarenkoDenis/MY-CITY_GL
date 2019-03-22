@@ -1,0 +1,30 @@
+[
+    {
+        "name": "popular",
+        "isActive": false
+    },
+    {
+        "name": "museums",
+        "isActive": false
+    },
+    {
+        "name": "parks",
+        "isActive": false
+    },
+    {
+        "name": "squares",
+        "isActive": false
+    },
+    {
+        "name": "monuments",
+        "isActive": false
+    },
+    {
+        "name": "restaurants",
+        "isActive": false
+    },
+    {
+        "name": "for kids",
+        "isActive": false
+    }
+]
