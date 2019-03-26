@@ -1,10 +1,54 @@
-<p>
+<div>
   list works!
 
+  <div *ngIf="isLoading ; else elseBlock">
+    Loading
+  </div>
 
-  <app-card></app-card>
-  <app-card></app-card>
-  <app-card></app-card>
-  <app-card></app-card>
-  <app-card></app-card>
-</p>
+  <ng-template #elseBlock>
+    Else loading...
+  </ng-template>
+
+
+
+  * <div *ngIf="isLoading; then thenBlock else elseBlock"></div>
+  * <ng-template #thenBlock>Content to render when condition is true.</ng-template>
+  * <ng-template #elseBlock>Content to render when condition is false.</ng-template>
+
+
+
+  <div hidden>
+    Loading... hidden
+  </div>
+
+
+
+  <div [ngSwitch]="viewMode">
+    <div *ngSwitchCase="'grid'">
+      Grid
+    </div>
+    <div *ngSwitchCase="list">
+      list
+    </div>
+    <div *ngSwitchDefault>
+        LOL
+    </div>
+  </div>
+
+
+  <div *ngFor="let place of places; index as i; even as myEven; last as myLast; odd as myOdd ">
+    {{ i }}
+    Even {{ myEven }}
+    last {{ myLast }}
+    <app-card [place]="place" [even]="myEven" [appAcl]="'red'"></app-card>
+    <button [appAcl]="'red'" [mycolor]="'green'">Remove</button>
+    <div [appAcl]="'blue'">Remove 1</div>
+
+
+    <input appMask type="text">
+  </div>
+
+
+  <!-- <app-card [place]="place"></app-card> -->
+
+</div>

@@ -17,11 +17,11 @@ export interface IUserData {
 }
 
 export interface IUpdatedData {
-  lastModifiedDate: string;
+  lastModifiedDate: number;
   modifiedBy: IUserData;
 }
 
 export interface ICreatedData {
-  createdDate: string;
+  createdDate: number;
   userData: IUserData;
 }
