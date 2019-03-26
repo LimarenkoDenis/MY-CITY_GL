@@ -14,17 +14,14 @@ export class CardComponent implements OnInit {
   public even: boolean;
 
 
-  @Input()
-  appAcl;
   constructor() { }
 
   ngOnInit() {
-    console.log('appAcl', this.appAcl);
 
   }
 
   getClass() {
-    return 'myClass'
+    return 'myClass';
   }
 
 }

@@ -1,18 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { IPlace } from '../interfaces/place.interface';
+import { of, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css']
 })
-export class ListComponent implements OnInit {
+export class ListComponent implements OnInit, AfterViewInit {
+  public term: string;
+
+  @ViewChild('c')
+  public lableRef: any;
+
+  @ViewChild('refmy')
+  public refmy: any;
+
+  public isAdmin = false;
   public list = 'list';
   public viewMode: 'grid' | 'list' | 'lol' = 'lol';
   public place = null;
   public isLoading = true;
 
-  public places: IPlace[] = [
+
+  public places: Observable<IPlace[]> = of([
     {
       "id": 0,
       "title": "Freedom Square",
@@ -96,7 +107,7 @@ export class ListComponent implements OnInit {
       },
       "rating": 2
     }
-  ]
+  ]);
   constructor() { }
 
   ngOnInit() {
@@ -132,5 +143,25 @@ export class ListComponent implements OnInit {
     //   }
     // }, 1500)
   }
+
+
+  search(event) {
+    this.term = event.target.value;
+  }
+
+  changeColor(event) {
+    console.log('event', event);
+  }
+
+
+  ngAfterViewInit() {
+    setTimeout(() => {
+      this.refmy.even = false;
+    }, 100);
+
+    console.log(this.lableRef);
+    console.log(this.refmy);
+  }
+
 
 }

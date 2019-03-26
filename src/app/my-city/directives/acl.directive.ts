@@ -1,38 +1,58 @@
-import { Directive, HostListener, ElementRef, Input } from '@angular/core';
+import { Directive, ElementRef, Input, TemplateRef, ViewContainerRef, HostBinding, Renderer2, OnInit } from '@angular/core';
 
 @Directive({
   selector: '[appAcl]'
 })
-export class AclDirective {
+export class AclDirective implements OnInit {
+  @HostBinding('class')
+  public class = 'myclass';
 
-  @Input('appAcl')
-  public color: string;
+
+  // @HostBinding('style.color')
+  // public color = 'myclass';
+
+
+  // @Input('appAcl')
+  // public myappAcl: string;
+
 
   @Input()
-  mycolor;
+  public set appAcl(value: [string, string]) {
+    console.log('input');
+
+    // this.serive - http
+    // this.store.select -
+    //
+
+
+
+    if (value) {
+
+      // this.class = ''
+
+      this.contRef.createEmbeddedView(this.template);
+      return;
+    }
+
+    this.contRef.clear();
+  }
 
   public constructor(
-    private el: ElementRef
+    private el: ElementRef,
+    // private renderer2: Renderer2, ??
+    // *
+    private template: TemplateRef<any>,
+    private contRef: ViewContainerRef
   ) {
 
-  }
-
-  @HostListener('click', ['$event'])
-  public myClick(event) {
-
-    console.log('mycolor', this.mycolor);
-
-    this.el.nativeElement.style.backgroundColor = this.color;
-    console.log('click', event);
-    console.log(this.el.nativeElement);
+  console.log('constructor');
 
   }
 
-  // @HostListener('mousemove', ['$event'])
-  // public mymousemove(event) {
-  //   console.log('mousemove', event);
-  // }
+  ngOnInit() {
 
+    console.log('ngOnInit');
 
+  }
 
 }

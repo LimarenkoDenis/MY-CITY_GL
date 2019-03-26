@@ -2,7 +2,7 @@
   <mat-card-header [class.even123]="even" [ngClass]="getClass()">
     <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title>{{ place.title }}</mat-card-title>
-    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+    <mat-card-subtitle>{{ place.createdBy.createdDate | date: 'medium' | uppercase }}</mat-card-subtitle>
   </mat-card-header>
   <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
   <mat-card-content>
@@ -15,3 +15,15 @@
     <button mat-button>SHARE</button>
   </mat-card-actions>
 </mat-card>
+
+<!--
+<pre>
+  {{ place | json}}
+</pre>
+
+
+
+<div *ngFor="let item of place | keyvalue">
+    key:{{item.key}}
+    value: {{item.value}}
+  </div> -->
