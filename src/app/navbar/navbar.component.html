@@ -1,0 +1,23 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active-link" [routerLink]="['/home']">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active-link" [routerLink]="['/users/1/notes']">Notes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active-link" [routerLink]="['/users/1/notes/42']" [queryParams]="{'login': '1'}">Note 42</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active-link" [routerLink]="['/users/1/notes/74']" [queryParams]="{'login': '2'}">Note 74</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active-link" [routerLink]="['/redirectMe']">Redirect Me </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active-link" [routerLink]="['/big-feature']">Big Feature</a>
+      </li>
+    </ul>
+</nav>
