@@ -1,5 +1,12 @@
 Users
-<mat-card class="example-card">
+isLoading$ {{ isLoading$ | async}}
+<div *ngFor="let user of users$ | async"> {{user.name}}</div>
+
+
+
+
+
+<!-- <mat-card class="example-card">
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title>{{ user.status | status: 'dsfsd' : 'sdfsdf' }}</mat-card-title>
@@ -37,5 +44,5 @@ Users
       <button mat-button>LIKE</button>
       <button mat-button>SHARE</button>
     </mat-card-actions>
-  </mat-card>
+  </mat-card> -->
 
