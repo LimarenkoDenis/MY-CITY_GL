@@ -12,6 +12,9 @@ import { reducers, metaReducers } from './reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { RouterModule } from '@angular/router';
+import { UsersComponent } from './users/users.component';
 
 @NgModule({
   declarations: [
@@ -20,12 +23,18 @@ import { EffectsModule } from '@ngrx/effects';
   ],
   imports: [
     BrowserModule,
-    MyCityModule,
+    // MyCityModule,
     UsersModule,
     BrowserAnimationsModule,
     StoreModule.forRoot(reducers, { metaReducers }),
     EffectsModule.forRoot([UserEffects]),
-    !environment.production ? StoreDevtoolsModule.instrument() : []
+    !environment.production ? StoreDevtoolsModule.instrument() : [],
+    RouterModule.forRoot([
+      {path: '', component: UsersComponent},
+      {path: 'lol', component: HeaderComponent},
+      { path: 'my-city', loadChildren: './my-city/my-city.module#MyCityModule'}
+    ]),
+    StoreRouterConnectingModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

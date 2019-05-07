@@ -40,8 +40,9 @@ pipes
 
 
 ngrx 
-  crud users via redux flow
-  selectors (total count, users online(active), select by id (enteties), calculate avarage age)
-  feature module
-  ngrx-router (select by id via routerReducer)
-  ngrx entity
+  - Overview
+  - crud users via redux flow
+  - selectors (total count, users online(active), select by id (enteties), calculate avarage age)
+  - feature module `(ng generate feature my-city/state/my-city -m my-city/my-city.module.ts --group)`
+  - ngrx-router (select by id via routerReducer)
+  - ngrx entity
