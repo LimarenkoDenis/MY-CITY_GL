@@ -36,3 +36,12 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 pipes
  default
  custom (filter, status)
+
+
+
+ngrx 
+  crud users via redux flow
+  selectors (total count, users online(active), select by id (enteties), calculate avarage age)
+  feature module
+  ngrx-router (select by id via routerReducer)
+  ngrx entity
