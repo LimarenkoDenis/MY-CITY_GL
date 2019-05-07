@@ -1,3 +1,12 @@
 Users
+
+<button (click)="addUser()">ADD USER</button>
+
 isLoading$ {{ isLoading$ | async}}
-<div *ngFor="let user of users$ | async"> {{user.name}}</div>
+<div *ngFor="let user of users$ | async"> {{user.name}}
+
+  <span (click)="removeUser(user.id)">X</span>
+
+
+  <span (click)="updateUser(user.id)">Update</span>
+</div>
