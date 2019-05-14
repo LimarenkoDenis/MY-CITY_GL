@@ -1,8 +1,8 @@
-import { SharedModule } from './../shared/shared.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UsersComponent } from './users.component';
 import { StatusPipe } from './status.pipe';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
