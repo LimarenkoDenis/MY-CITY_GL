@@ -1,6 +1,6 @@
 <mat-card class="example-card" [ngClass]="{'even': even, 'odd': !even }">
   <mat-card-header [class.even123]="even" [ngClass]="getClass()">
-    <div mat-card-avatar class="example-header-image"></div>
+    <div [@cardState]="state" mat-card-avatar class="example-header-image"></div>
     <mat-card-title>{{ place.title }}</mat-card-title>
     <mat-card-subtitle>{{ place.createdBy.createdDate | date: 'medium' | uppercase }}</mat-card-subtitle>
   </mat-card-header>
@@ -11,7 +11,7 @@
     </p>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button>LIKE</button>
+    <button mat-button (click)="toggleLikedState()">LIKE</button>
     <button mat-button>SHARE</button>
   </mat-card-actions>
 </mat-card>
