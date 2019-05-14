@@ -1,6 +1,15 @@
-<p #header>
-  header works!
+<div #header
+     fxLayout="row"
+     fxLayout.xs="column"
+     fxLayoutGap="16px"
+     fxLayoutAlign="space-between"
+     [ngClass.xs]="'mobile-styled'"
+>
+  <div>
+    header works!
+  </div>
 
-
-  totalUserCount: {{totalUserCount$ | async }}
-</p>
+  <div>
+    totalUserCount: {{totalUserCount$ | async }}
+  </div>
+</div>

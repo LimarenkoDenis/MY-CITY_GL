@@ -1,16 +1,20 @@
-<!-- <app-users></app-users> -->
-<app-header></app-header>
-<!-- <div id="testid">dsfsd</div>
+<div class="mat-typography">
 
-<app-list></app-list> -->
+  <mat-icon color="warn">home</mat-icon>
 
+  <!-- <app-users></app-users> -->
+  <app-header class="mat-elevation-z16"></app-header>
+  <!-- <div id="testid">dsfsd</div>
 
-
-<button [routerLink]="['']">users</button>
-<button [routerLink]="['users', '1']">users 1</button>
-
-<button [routerLink]="['city']">city</button>
+  <app-list></app-list> -->
 
 
-<router-outlet></router-outlet>
-<!-- <app-users></app-users> -->
+  <button mat-stroked-button [routerLink]="['']">users</button>
+  <button disableRipple mat-flat-button [routerLink]="['users', '1']">users 1</button>
+
+  <button mat-button [routerLink]="['city']">city</button>
+
+
+  <router-outlet></router-outlet>
+  <!-- <app-users></app-users> -->
+</div>

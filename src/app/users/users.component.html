@@ -1,6 +1,6 @@
 Users
 
-<button (click)="addUser()">ADD USER</button>
+<button mat-raised-button color="primary" (click)="addUser()">ADD USER</button>
 
 isLoading$ {{ isLoading$ | async}}
 <div *ngFor="let user of users$ | async"> {{user.name}}

@@ -16,6 +16,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { CommonModule } from '@angular/common';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,7 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
     // MyCityModule,
     UsersModule,
     BrowserAnimationsModule,
+    SharedModule,
     StoreModule.forRoot(reducers, { metaReducers }),
     EffectsModule.forRoot([UserEffects]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
