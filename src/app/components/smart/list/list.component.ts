@@ -15,8 +15,13 @@ export class ListComponent implements OnInit {
 
     setTimeout(() => {
       this.data.title = 'Gorkiy Park';
-      console.log('parent component mutate data')
-    }, 2000)
+      // console.log('parent component mutate data');
+
+      // this.data = {
+      //   ...this.data,
+      //   title: 'Gorkiy Park'
+      // };
+    }, 2000);
   }
 
   public buttonClicked(event): void {

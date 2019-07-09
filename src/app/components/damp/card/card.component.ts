@@ -24,9 +24,10 @@ import {
   selector: 'app-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.css'],
-  // changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CardComponent {
+export class CardComponent implements DoCheck, OnChanges, OnInit,
+  AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy {
 
   @Input() attraction: any = null;
   @Output() clickButton: EventEmitter<string> = new EventEmitter<string>();
@@ -35,39 +36,33 @@ export class CardComponent {
   public prevTitle: string;
   public time: number;
 
-  constructor(private cd: ChangeDetectorRef, private zone: NgZone) {
-    this.time = this.getDate();
+  @ViewChildren(RatingComponent) RatingComponent: QueryList<RatingComponent>;
 
-    this.zone.runOutsideAngular(() => {
-      setInterval(() => {
-        this.time = this.getDate();
-      }, 1);
-    });
+  public constructor(private cd: ChangeDetectorRef) {
+      console.log(`constructor - data is ${this.attraction}`);
   }
 
-  public getDate(): number {
-    return Date.now();
-  }
-
-
-
-
-
-  // @ViewChildren(RatingComponent) RatingComponent: QueryList<RatingComponent>;
-
-  // public constructor() {
-  //     console.log(`constructor - data is ${this.attraction}`);
-  // }
   public ngOnChanges(values): void {
-      // console.log(`ngOnChanges - data is -`, values);
+      console.log(`ngOnChanges - data is -`, values);
   }
+
   public ngOnInit(): void {
+    // this.cd.checkNoChanges()
+    // this.cd.detach();
+
+    // setTimeout(() => {
+    //   this.cd.reattach();
+    // }, 5000);
+
+
+    // this.cd.markForCheck();
+    // this.cd.detectChanges();
+
     this.prevTitle = this.attraction.title;
 
-      // console.log(`ngOnInit  - data is`, this.attraction);
+    console.log(`ngOnInit  - data is`, this.attraction);
   }
   public ngDoCheck(): void {
-
     if (this.prevTitle !== this.attraction.title) {
       this.prevTitle = this.attraction.title;
       this.cd.markForCheck();
@@ -104,3 +99,23 @@ export class CardComponent {
     this.clickButton.emit($event);
   }
 }
+
+
+
+
+
+
+
+  //  constructor(private cd: ChangeDetectorRef, private zone: NgZone) {
+  //   this.time = this.getDate();
+
+    // this.zone.runOutsideAngular(() => {
+    //   setInterval(() => {
+    //     this.time = this.getDate();
+    //   }, 1);
+    // });
+  // }
+
+  // public getDate(): number {
+  //   return Date.now();
+  // }
