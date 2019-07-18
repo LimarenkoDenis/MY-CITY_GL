@@ -70,23 +70,23 @@ export class CardComponent implements DoCheck, OnChanges, OnInit,
 
       // console.log(`ngDoCheck -`, this.attraction);
   }
-  // public ngAfterContentInit(): void {
-  //     console.log('ngAfterContentInit');
-  //     console.log('ngAfterContentInit - RatingComponent', this.RatingComponent);
-  // }
-  // public ngAfterContentChecked(): void {
-  //     console.log('ngAfterContentChecked');
-  // }
-  // public ngAfterViewInit(): void {
-  //     console.log('ngAfterViewInit');
-  //     console.log('ngAfterViewInit - RatingComponent', this.RatingComponent);
-  // }
-  // public ngAfterViewChecked(): void {
-  //     console.log('ngAfterViewChecked');
-  // }
-  // public ngOnDestroy(): void {
-  //     console.log('ngOnDestroy');
-  // }
+  public ngAfterContentInit(): void {
+      console.log('ngAfterContentInit');
+      console.log('ngAfterContentInit - RatingComponent', this.RatingComponent);
+  }
+  public ngAfterContentChecked(): void {
+      console.log('ngAfterContentChecked');
+  }
+  public ngAfterViewInit(): void {
+      console.log('ngAfterViewInit');
+      console.log('ngAfterViewInit - RatingComponent', this.RatingComponent);
+  }
+  public ngAfterViewChecked(): void {
+      console.log('ngAfterViewChecked');
+  }
+  public ngOnDestroy(): void {
+      console.log('ngOnDestroy');
+  }
 
 
 
