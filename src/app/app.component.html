@@ -1,4 +1,160 @@
-<!-- <app-users></app-users> -->
-<app-header></app-header>
+<div class="wrapper">
+    <form ngForm #form="ngForm" (ngSubmit)="onSubmit(form)">
+        <div class="form-group">
+           <label for="email">Mail</label>
+           <input
+                class="form-control"
+                type="email"
+                id="email"
+                name="email"
+                ngModel
+                #email="ngModel"
+                (change)="onChange(email)"
+                required
+                email
+            >
+            <span *ngIf="email.invalid && email.touched">Email Error!!!!</span>
+        </div>
+        <div class="form-group">
+            <label for="subscription">Choose subscription</label>
+            <select 
+                class="form-control"
+                name="subscription"
+                [ngModel]="selectedSubscription"
+                id="subscription"
+                >
+                <option
+                    *ngFor="let option of subscriptions; let i = index"
+                    [value]="option">{{option}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input
+                type="password"
+                class="form-control"
+                name="password"
+                ngModel
+                #password="ngModel"
+                required
+            >
+            <span class="error" *ngIf="password.invalid && password.touched">Password Error!!!</span>
+        </div>
+        <button *ngIf="form.valid" type="submit">Submit</button>
+    </form>
+</div>
 
-<app-list></app-list>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<form #signupForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="email">Mail</label>
+        <input
+            #email="ngModel"
+            type="email" 
+            id="email" 
+            ngModel
+            name="email"
+            required
+            email
+            class="form-control">
+        <span
+            class="help-block"
+            *ngIf="!email.valid && email.touched">Please enter a valid email</span>
+    </div>
+    <div class="form-group">
+        <label for="subscription">Choose a Subscription</label>
+        <select
+            name="subscription"
+            id="subscription"
+            [ngModel]="selectedSubscription"
+            class="form-control"
+        >
+          <option
+              *ngFor="let subscription of subscriptions"
+              [value]="subscription">{{subscription}}</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input
+            required
+            #password="ngModel"
+            type="password"
+            id="password"
+            ngModel
+            name="password"
+            class="form-control">
+        <span
+        class="help-block"
+        *ngIf="!password.valid && password.touched">Please enter a password</span>
+    </div>
+    <div>
+        <label>
+            <input type="checkbox" ngModel name="like"> Like this article?
+        </label>
+    </div>
+    <div>
+        <label>
+            <input class="form-control" type="radio" ngModel name="clap" value="2"> 2 claps?
+        </label>
+        <label>
+            <input class="form-control" type="radio" ngModel name="clap" value="3"> 3 claps?
+        </label>
+    </div>
+    <div ngModelGroup="person">
+        <input type="text" ngModel
+            name="firstName"
+            #firstName="ngModel" 
+            minlength="3"
+            maxlength="10"
+            required
+        >
+        <div *ngIf="firstName.touch && !firstName.valid">
+            <div *ngIf="firstName.errors.required">
+                Firstname is required
+            </div>
+            <div *ngIf="firstName.errors.minlength">
+                Firstname minimum length is
+                {{ firstName.errors.minlength.requiredLength }}
+            </div>
+            <div *ngIf="firstName.errors.maxlength">
+                Firstname maximum length is
+                {{ firstName.errors.maxlength.requiredLength }}
+            </div>
+        </div>
+    </div>
+    <p *ngIf="!signupForm.valid && signupForm.touched">The form is invalid!</p>
+    <button [disabled]="!signupForm.valid" class="btn btn-primary" type="submit">Submit</button>
+</form>
+ -->

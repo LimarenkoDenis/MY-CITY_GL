@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { MyCityModule } from './my-city/my-city.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -16,7 +17,8 @@ import { UsersModule } from './users/users.module';
     BrowserModule,
     MyCityModule,
     UsersModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

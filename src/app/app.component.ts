@@ -1,16 +1,26 @@
-import { Component } from '@angular/core';
-import { environment } from 'src/environments/environment';
+import { Component, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'angulargl';
+  subscriptions = ['Basic', 'Advanced', 'Pro'];
+  selectedSubscription = 'Pro';
+  person = {
+    firstName: 'Bob'
+  };
+  email = 'email.test@test.com';
+  @ViewChild('form') sgForm: NgForm;
 
-  constructor() {
-    console.log(environment.api);
+  onSubmit(form) {
+    console.log(form);
+  }
 
+
+  onChange(field) {
+    console.log(field)
   }
 }
