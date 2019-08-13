@@ -1,160 +1,135 @@
-<div class="wrapper">
-    <form ngForm #form="ngForm" (ngSubmit)="onSubmit(form)">
-        <div class="form-group">
-           <label for="email">Mail</label>
-           <input
-                class="form-control"
-                type="email"
-                id="email"
-                name="email"
-                ngModel
-                #email="ngModel"
-                (change)="onChange(email)"
-                required
-                email
-            >
-            <span *ngIf="email.invalid && email.touched">Email Error!!!!</span>
-        </div>
-        <div class="form-group">
-            <label for="subscription">Choose subscription</label>
-            <select 
-                class="form-control"
-                name="subscription"
-                [ngModel]="selectedSubscription"
-                id="subscription"
-                >
-                <option
-                    *ngFor="let option of subscriptions; let i = index"
-                    [value]="option">{{option}}</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input
-                type="password"
-                class="form-control"
-                name="password"
-                ngModel
-                #password="ngModel"
-                required
-            >
-            <span class="error" *ngIf="password.invalid && password.touched">Password Error!!!</span>
-        </div>
-        <button *ngIf="form.valid" type="submit">Submit</button>
-    </form>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- 
-<form #signupForm="ngForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-        <label for="email">Mail</label>
-        <input
-            #email="ngModel"
-            type="email" 
-            id="email" 
-            ngModel
-            name="email"
-            required
-            email
-            class="form-control">
-        <span
-            class="help-block"
-            *ngIf="!email.valid && email.touched">Please enter a valid email</span>
-    </div>
-    <div class="form-group">
-        <label for="subscription">Choose a Subscription</label>
-        <select
-            name="subscription"
-            id="subscription"
-            [ngModel]="selectedSubscription"
-            class="form-control"
-        >
-          <option
-              *ngFor="let subscription of subscriptions"
-              [value]="subscription">{{subscription}}</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <label for="password">Password</label>
-        <input
-            required
-            #password="ngModel"
-            type="password"
-            id="password"
-            ngModel
-            name="password"
-            class="form-control">
-        <span
-        class="help-block"
-        *ngIf="!password.valid && password.touched">Please enter a password</span>
-    </div>
-    <div>
-        <label>
-            <input type="checkbox" ngModel name="like"> Like this article?
-        </label>
-    </div>
-    <div>
-        <label>
-            <input class="form-control" type="radio" ngModel name="clap" value="2"> 2 claps?
-        </label>
-        <label>
-            <input class="form-control" type="radio" ngModel name="clap" value="3"> 3 claps?
-        </label>
-    </div>
-    <div ngModelGroup="person">
-        <input type="text" ngModel
-            name="firstName"
-            #firstName="ngModel" 
-            minlength="3"
-            maxlength="10"
-            required
-        >
-        <div *ngIf="firstName.touch && !firstName.valid">
-            <div *ngIf="firstName.errors.required">
-                Firstname is required
-            </div>
-            <div *ngIf="firstName.errors.minlength">
-                Firstname minimum length is
-                {{ firstName.errors.minlength.requiredLength }}
-            </div>
-            <div *ngIf="firstName.errors.maxlength">
-                Firstname maximum length is
-                {{ firstName.errors.maxlength.requiredLength }}
-            </div>
+<!-- <form action="" [formGroup]="form">
+    <input type="text" formControlName="firstName">
+    <input type="checkbox" formControlName="checkbox">
+    
+    <input type="text" formControlName="subField" *ngIf="isSubField">
+    
+     <div formArrayName="checkboxArray">
+        <div *ngFor="let checkbox of form.get('checkboxArray').controls; let i = index">
+            <label for=""></label>
+            <input type="checkbox" [formControlName]="i">
         </div>
     </div>
-    <p *ngIf="!signupForm.valid && signupForm.touched">The form is invalid!</p>
-    <button [disabled]="!signupForm.valid" class="btn btn-primary" type="submit">Submit</button>
 </form>
- -->
+
+
+<p>Form Value: {{ form.value | json }}</p>
+<p>Form Valid: {{ form.valid }}</p> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <form action="" [formGroup]="form">
+    <input type="text" formControlName="text">
+
+    <div>
+        <input type="checkbox" formControlName="optionA"> Option A
+        <input type="checkbox" formControlName="optionB"> Option B
+        <input formControlName="optionBExtra" placeholder="Reason" *ngIf="optionB.value">
+    </div> -->
+<!-- </form> -->
+
+<!-- <p>Form Value: {{ form.value | json }}</p>
+<p>Form Valid: {{ form.valid }}</p> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<form [formGroup]="dynamicForm">
+  <div formArrayName="filters">
+    <div 
+      *ngFor="let filter of filtersFormArray.controls; let i = index;">
+
+      <div 
+        [formGroupName]="i" 
+        class="container">
+
+        <mat-form-field>
+          <mat-select 
+            placeholder="Select Filter"
+            formControlName="filterType">
+            <mat-option 
+              *ngFor="let filterType of filterTypes" 
+              [value]="filterType">
+              {{ filterType }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-select 
+            (selectionChange)="selectedAPIChanged(i)"
+            placeholder="Select API"
+            #apiField
+            formControlName="apiType">
+            <mat-option 
+              *ngFor="let apiType of apiTypes"
+              [value]="apiType">
+              {{ apiType }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field 
+          *ngIf="filter.get('value')">
+          <input 
+            matInput 
+            formControlName="value" 
+            [placeholder]="apiField.value">
+        </mat-form-field>
+
+        <mat-icon 
+          (click)="removeFilterFromFiltersFormArray(i)">
+          delete
+        </mat-icon>
+
+      </div>
+    </div>
+
+    <button 
+      mat-raised-button 
+      color="primary" 
+      type="button" 
+      (click)="addFilterToFiltersFormArray()">
+      Add Filter
+    </button>
+
+    <button 
+      class="save" 
+      mat-stroked-button 
+      color="primary" 
+      [disabled]="dynamicForm.invalid || filtersFormArray.controls.length < 1"
+      (click)="save()">
+      Save
+    </button>
+
+  </div>
+</form>
